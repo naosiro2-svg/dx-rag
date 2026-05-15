@@ -1,0 +1,13 @@
+reports/
+repots2/
+__pycache__/
+*.pyc
+.git/
+.claude/
+*.log
+*.md
+ingest.py
+search.py
+generate_samples.py
+analyze_keywords.py
+ingest_log.txt
