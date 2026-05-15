@@ -182,6 +182,23 @@ def render_results(results: dict, query: str, active_tags: list[str]) -> None:
             st.text(preview)
 
 
+PASSWORD = "dx2024"
+
+
+def check_password() -> bool:
+    if st.session_state.get("authenticated"):
+        return True
+    st.title("🔐 ログイン")
+    pw = st.text_input("パスワード", type="password", key="pw_input")
+    if st.button("ログイン", use_container_width=True):
+        if pw == PASSWORD:
+            st.session_state["authenticated"] = True
+            st.rerun()
+        else:
+            st.error("パスワードが違います")
+    return False
+
+
 # ══════════════════════════════════════════════════════════
 # Streamlit アプリ本体
 # ══════════════════════════════════════════════════════════
@@ -191,6 +208,9 @@ def main() -> None:
         page_icon="🔍",
         layout="wide",
     )
+
+    if not check_password():
+        st.stop()
 
     # ── サイドバー：タグフィルタ ─────────────────────────
     with st.sidebar:
