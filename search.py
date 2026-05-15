@@ -20,7 +20,7 @@ from sentence_transformers import SentenceTransformer
 
 CHROMA_DIR      = Path("chroma_db")
 COLLECTION_NAME = "dx_reports"
-MODEL_NAME      = "paraphrase-multilingual-mpnet-base-v2"
+MODEL_NAME      = "paraphrase-multilingual-MiniLM-L12-v2"
 DEFAULT_TOP_K   = 5
 PREVIEW_CHARS   = 350  # 検索結果で表示するテキストの文字数
 

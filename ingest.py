@@ -13,7 +13,7 @@ from sentence_transformers import SentenceTransformer
 REPORTS_DIR = Path("reports")
 CHROMA_DIR = Path("chroma_db")
 COLLECTION_NAME = "dx_reports"
-MODEL_NAME = "paraphrase-multilingual-mpnet-base-v2"
+MODEL_NAME = "paraphrase-multilingual-MiniLM-L12-v2"
 CHUNK_SIZE = 400   # 日本語テキストの文字数
 CHUNK_OVERLAP = 80 # チャンク間オーバーラップ文字数
 

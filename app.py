@@ -11,7 +11,7 @@ from sentence_transformers import SentenceTransformer
 # ── 定数 ──────────────────────────────────────────────────
 CHROMA_DIR      = Path("chroma_db")
 COLLECTION_NAME = "dx_reports"
-MODEL_NAME      = "paraphrase-multilingual-mpnet-base-v2"
+MODEL_NAME      = "paraphrase-multilingual-MiniLM-L12-v2"
 NONE            = "（指定なし）"
 
 # ══════════════════════════════════════════════════════════
