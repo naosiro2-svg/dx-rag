@@ -188,14 +188,21 @@ PASSWORD = "dx2024"
 def check_password() -> bool:
     if st.session_state.get("authenticated"):
         return True
-    st.title("🔐 ログイン")
-    pw = st.text_input("パスワード", type="password", key="pw_input")
-    if st.button("ログイン", use_container_width=True):
+
+    placeholder = st.empty()
+    with placeholder.container():
+        st.title("🔐 ログイン")
+        pw = st.text_input("パスワード", type="password", key="pw_input")
+        submitted = st.button("ログイン", use_container_width=True)
+
+    if submitted:
         if pw == PASSWORD:
             st.session_state["authenticated"] = True
+            placeholder.empty()
             st.rerun()
         else:
             st.error("パスワードが違います")
+
     return False
 
 
